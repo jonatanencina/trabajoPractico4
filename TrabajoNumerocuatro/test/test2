@@ -1,0 +1,108 @@
+package test.prac.cuatro;
+
+import static org.junit.Assert.*;
+import junit.framework.Assert;
+
+import org.junit.Test;
+
+import trabajo.practico.clases.*;
+
+
+
+
+public class TestTragamonedas {
+	@Test
+	public void antesDeGirar() {
+	
+		Tragamonedas tragamonedas = new Tragamonedas();
+
+	  
+	    
+	  
+	   System.out.println("el el tambor numero uno devuelve "+tragamonedas.tambor_uno.getPosicion());
+		
+		System.out.println("el el tambor numero dos devuelve "+tragamonedas.tambor_dos.getPosicion());	
+		
+		System.out.println("el el tambor numero uno devuelve "+tragamonedas.tambor_tres.getPosicion());
+		
+	
+		System.out.println("**********************************************************************");
+	
+		 int contenedor1,contenedor2,contenedor3;
+		   contenedor1=tragamonedas.tambor_uno.getPosicion();
+		   contenedor2=tragamonedas.tambor_dos.getPosicion();
+		   contenedor3=tragamonedas.tambor_tres.getPosicion();
+		   
+		   assertTrue(contenedor1==10 && contenedor2==10 && contenedor3==10);
+	}
+	
+	
+	
+	
+	
+	@Test
+	public void cuandoDosTamboresCoinciden() {
+	
+		Tragamonedas tragamonedas = new Tragamonedas();
+
+	    tragamonedas.activar();
+	    
+	  
+	   System.out.println("el el tambor numero uno devuelve "+tragamonedas.tambor_uno.getPosicion());
+		
+		System.out.println("el el tambor numero dos devuelve "+tragamonedas.tambor_dos.getPosicion());	
+		
+		System.out.println("el el tambor numero uno devuelve "+tragamonedas.tambor_tres.getPosicion());
+		
+	
+		System.out.println("**********************************************************************");
+	
+		 int contenedor1,contenedor2,contenedor3;
+		   contenedor1=tragamonedas.tambor_uno.getPosicion();
+		   contenedor2=tragamonedas.tambor_dos.getPosicion();
+		   contenedor3=tragamonedas.tambor_tres.getPosicion();
+		   
+		   assertTrue(contenedor1==contenedor2 );
+	}
+	
+	@Test
+	public void mijuego(){
+	
+		
+		Tragamonedas tragamonedas = new Tragamonedas();
+	
+        tragamonedas.activar();
+       
+    	
+		
+		
+	
+     			
+     		
+	System.out.println("el el tambor numero uno devuelve "+tragamonedas.tambor_uno.getPosicion());
+	
+	System.out.println("el el tambor numero dos devuelve "+tragamonedas.tambor_dos.getPosicion());	
+	
+	System.out.println("el el tambor numero tres devuelve "+tragamonedas.tambor_tres.getPosicion());
+	
+
+	
+		if (tragamonedas.entregaPremio()) {
+			System.out.println(" has ganado");
+		
+		}
+		else {
+			System.out.println(" Perdiste ,segui jugando");
+			
+		}
+	
+		
+		assertNotEquals(10,tragamonedas.tambor_uno.getPosicion(),0.01);
+	}
+		//assertEquals(>,tragamonedas.tambor_uno.getPosicion(),0.01);
+	
+		 
+		
+     		}
+	
+	
